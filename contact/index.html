@@ -8,16 +8,31 @@ layout: default
         <h3>Contact Me</h3>
         <p> 有上面想说的就在这里告诉我吧.</p>
 
+
         {% if site.gitalk.enable %}
+        <div class="container">
           <div id="disqus_thread"></div>
           <div id="gitalk_container"></div>
-          <script>
-          window.onload = function(){
-          gitalk.id='{{page.date}}',
-          gitalk.render('gitalk_container')
-           }
-           </script>
+
+           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+           <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+           <script>
+              var gitalk = new Gitalk({
+                clientID: '{{site.comments.clientID}}',
+                clientSecret: '{{site.comments.Secret}}',
+                repo: '{{site.comments.repo}}',
+                owner: '{{site.comments.owner}}',
+                admin: '{{site.comments.admin}}',
+                id: 'Contact Me' ,
+                distractionFreeMode: '{{site.comments.distractionFreeMode}}'
+              })
+              gitalk.render('gitalk_container')
+            </script>
+
+           <!--gitalk stop -->
+
         {% endif %}
+
     </div>
 </section>
         <!--
