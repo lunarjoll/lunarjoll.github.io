@@ -7,6 +7,18 @@ layout: default
     <div class="container">
         <h3>Contact Me</h3>
         <p> 有上面想说的就在这里告诉我吧.</p>
+
+        {% if site.gitalk.enable %}
+          <div id="disqus_thread"></div>
+          <div id="gitalk_container"></div>
+          <script>
+          window.onload = function(){
+          gitalk.render('gitalk_container')
+           }
+           </script>
+        {% endif %}
+    </div>
+</section>
         <!--
         <form method="post" action="#">
             <div class="row uniform">
@@ -29,7 +41,7 @@ layout: default
             </div>
         </form>
         -->
-        <!--gitment start -->
+        <!--gitment start
                   {% if site.comment_gitment_repo %}
                 <div id="gitmentContainer"></div>
                 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -49,6 +61,6 @@ layout: default
                     gitment.render('gitmentContainer')
                 </script>
                 {% endif %}
-        <!--gitment stop -->
+        gitment stop -->
     </div>
 </section>

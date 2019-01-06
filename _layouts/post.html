@@ -18,9 +18,9 @@ layout: default
             {% if page.next %}
             <a href="{{ page.next.url }}" class="float-right">Next post &rarr;</a> {% endif %}
         </footer>
+    </div>
 
-
-<!--gitment start -->
+<!--gitment start
           {% if site.comment_gitment_repo %}
         <div id="gitmentContainer"></div>
         <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -39,12 +39,38 @@ layout: default
             gitment.render('gitmentContainer')
         </script>
         {% endif %}
+ gitment stop -->
+
+
+<!--gitment start -->
+{% if site.gitalk.enable %}
+<div class="container">
+  <div id="disqus_thread"></div>
+  <div id="gitalk_container"></div>
+  <script>
+      window.onload = function(){
+      gitalk.render('gitalk_container')
+   }
+   </script>
+{% endif %}
+<!--
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+<script>
+   var gitalk = new Gitalk({
+     clientID: '{{comments.clientID}}',
+     clientSecret: '{{comments.Secret}}',
+     repo: '{{comments.repo}}',
+     owner: '{{comments.owner}}',
+     admin: '{{comments.admin}}',
+     id: '{{page.date}}' ,
+     distractionFreeMode: '{{comments.distractionFreeMode}}'
+   })
+   gitalk.render('gitalk_container')
+ </script> -->
+
 <!--gitment stop -->
-
-
-
-
-
-    </div>
+</div>
 
 </section>

@@ -17,3 +17,20 @@ markdown: kramdown
 comment_gitment_repo: blog-comment
 comment_gitment_clientId: e69a26cb36dad5198329
 comment_gitment_clientSecret: 16d4b057365c68e6f56944e06e28be0470b5be91
+
+gitalk:
+  enable: true
+  owner: lunarjoll
+  repo: blog-comment
+  admin: lunarjoll
+  clientID: e69a26cb36dad5198329
+  clientSecret: 16d4b057365c68e6f56944e06e28be0470b5be91
+
+comments:
+  gitalk: true
+  clientID: e69a26cb36dad5198329
+  Secret: 16d4b057365c68e6f56944e06e28be0470b5be91
+  repo: 'blog-comment'
+  owner: 'lunarjoll'
+  admin: 'lunarjoll'
+  distractionFreeMode: false
