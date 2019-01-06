@@ -22,9 +22,9 @@
 		   var gitalk = new Gitalk({
 		     clientID: '{{comments.clientID}}',
 		     clientSecret: '{{comments.Secret}}',
-		     repo: '{{comments.repo}}',
-		     owner: '{{comments.owner}}',
-		     admin: '{{comments.admin}}',
+		     repo: '{{site.comments.repo}}',
+		     owner: '{{site.comments.owner}}',
+		     admin: '{{site.comments.admin}}',
 		     id: '{{page.date}}' ,
 		     distractionFreeMode: '{{comments.distractionFreeMode}}'
 		   })
