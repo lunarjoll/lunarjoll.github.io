@@ -6,7 +6,8 @@ layout: default
 <section id="one">
     <div class="container">
         <h3>Contact Me</h3>
-        <p> 空页面.</p>
+        <p> 有上面想说的就在这里告诉我吧.</p>
+        <!--
         <form method="post" action="#">
             <div class="row uniform">
                 <div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
@@ -27,5 +28,27 @@ layout: default
                 </div>
             </div>
         </form>
+        -->
+        <!--gitment start -->
+                  {% if site.comment_gitment_repo %}
+                <div id="gitmentContainer"></div>
+                <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+                <script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+                <script>
+                    var gitment = new Gitment({
+                	//	id: '<%= page.date %>',
+                  //      id: '{{page.date}}',
+                        id:   'Contact Me',
+                        owner: '{{site.github_username}}',
+                        repo: '{{site.comment_gitment_repo}}',
+                        oauth: {
+                            client_id: '{{site.comment_gitment_clientId}}',
+                            client_secret: '{{site.comment_gitment_clientSecret}}',
+                        },
+                    });
+                    gitment.render('gitmentContainer')
+                </script>
+                {% endif %}
+        <!--gitment stop -->
     </div>
 </section>

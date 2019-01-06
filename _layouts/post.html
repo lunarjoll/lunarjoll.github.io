@@ -20,14 +20,15 @@ layout: default
         </footer>
 
 
-
+<!--gitment start -->
           {% if site.comment_gitment_repo %}
         <div id="gitmentContainer"></div>
         <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
         <script src="https://www.wenjunjiang.win/js/gitment.js"></script>
         <script>
             var gitment = new Gitment({
-        		id: '<%= page.date %>',
+        	//	id: '<%= page.date %>',
+                id: '{{page.date}}',
                 owner: '{{site.github_username}}',
                 repo: '{{site.comment_gitment_repo}}',
                 oauth: {
@@ -38,7 +39,7 @@ layout: default
             gitment.render('gitmentContainer')
         </script>
         {% endif %}
-
+<!--gitment stop -->
 
 
 
